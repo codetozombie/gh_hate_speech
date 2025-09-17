@@ -1,0 +1,9 @@
+train_samples: 17080
+val_samples: 4462
+test_samples: 4462
+train_hate_ratio: 0.5
+val_hate_ratio: 0.3619453160017929
+test_hate_ratio: 0.3619453160017929
+train_distribution: {0: 8540, 1: 8540}
+val_distribution: {0: 2847, 1: 1615}
+test_distribution: {0: 2847, 1: 1615}
