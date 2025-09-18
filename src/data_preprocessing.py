@@ -661,6 +661,60 @@ def preprocess_pipeline(input_path: str,
         raise Exception(f"Preprocessing pipeline failed: {str(e)}")
 
 
+def load_splits(base_path: str = 'data/processed/') -> Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+    """
+    Load processed train, validation, and test splits.
+
+    Args:
+        base_path (str): Base path to processed data directory
+
+    Returns:
+        Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]: Train, validation, and test DataFrames
+
+    Raises:
+        FileNotFoundError: If any of the split files are missing
+    """
+    import os
+
+    train_path = os.path.join(base_path, 'train.csv')
+    val_path = os.path.join(base_path, 'val.csv')
+    test_path = os.path.join(base_path, 'test.csv')
+
+    # Check if all files exist
+    missing_files = []
+    for path, split_name in [(train_path, 'train'), (val_path, 'val'), (test_path, 'test')]:
+        if not os.path.exists(path):
+            missing_files.append(f"{split_name}: {path}")
+
+    if missing_files:
+        raise FileNotFoundError(
+            f"Missing processed data files:\n" + "\n".join(missing_files) +
+            f"\nPlease run the preprocessing pipeline first to generate these files."
+        )
+
+    try:
+        train_df = pd.read_csv(train_path)
+        val_df = pd.read_csv(val_path)
+        test_df = pd.read_csv(test_path)
+
+        # Validate DataFrames have required columns
+        required_cols = ['text', 'label']
+        for df, name in [(train_df, 'train'), (val_df, 'val'), (test_df, 'test')]:
+            missing_cols = [
+                col for col in required_cols if col not in df.columns]
+            if missing_cols:
+                raise ValueError(
+                    f"Missing columns in {name} data: {missing_cols}")
+
+        print(
+            f"Loaded splits - Train: {len(train_df)}, Val: {len(val_df)}, Test: {len(test_df)}")
+
+        return train_df, val_df, test_df
+
+    except Exception as e:
+        raise Exception(f"Error loading splits: {str(e)}")
+
+
 if __name__ == "__main__":
     # Example usage
     try:
