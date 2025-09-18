@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/infom/Documents/DCIT%20316/gh_hate_speech/mlruns/977192562300891501/3131a7c40f964fef9a785ebe7ec54268/artifacts
+end_time: 1758212223137
+entry_point_name: ''
+experiment_id: '977192562300891501'
+lifecycle_stage: active
+run_id: 3131a7c40f964fef9a785ebe7ec54268
+run_name: capable-auk-759
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1758212222874
+status: 3
+tags: []
+user_id: infom

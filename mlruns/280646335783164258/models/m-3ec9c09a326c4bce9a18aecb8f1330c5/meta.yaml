@@ -1,0 +1,10 @@
+artifact_location: file:///C:/Users/infom/Documents/DCIT%20316/gh_hate_speech/mlruns/280646335783164258/models/m-3ec9c09a326c4bce9a18aecb8f1330c5/artifacts
+creation_timestamp: 1758211039052
+experiment_id: '280646335783164258'
+last_updated_timestamp: 1758211055356
+model_id: m-3ec9c09a326c4bce9a18aecb8f1330c5
+model_type: null
+name: model
+source_run_id: f09a24e719424cc8bb4c2c6bd5c8614c
+status: 2
+status_message: null

@@ -1,0 +1,23 @@
+artifact_path: file:///C:/Users/infom/Documents/DCIT%20316/gh_hate_speech/mlruns/280646335783164258/models/m-a77e8ceb7f874a70ae70547922c5fc6b/artifacts
+flavors:
+  python_function:
+    config:
+      device: null
+    data: data
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.pytorch
+    pickle_module_name: mlflow.pytorch.pickle_module
+    python_version: 3.13.5
+  pytorch:
+    code: null
+    model_data: data
+    pytorch_version: 2.8.0+cpu
+mlflow_version: 3.4.0
+model_id: m-a77e8ceb7f874a70ae70547922c5fc6b
+model_size_bytes: 2953212
+model_uuid: m-a77e8ceb7f874a70ae70547922c5fc6b
+prompts: null
+run_id: f860ff3ac66a4e3aa67838efe821b2ef
+utc_time_created: '2025-09-18 16:00:06.875237'
